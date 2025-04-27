@@ -105,7 +105,13 @@ consultationType.addEventListener('change', function() {
 
 // Form validation and submission
 consultationForm.addEventListener('submit', function(e) {
-    if (!field.value) {
+    // Basic form validation
+    const requiredFields = document.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        
+         if (!field.value) {
             isValid = false;
             field.style.borderColor = 'red';
             e.preventDefault(); // Only prevent submission if validation fails
