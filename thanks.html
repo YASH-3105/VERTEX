@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - VERTEX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            padding: 150px 20px 100px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-icon {
+            font-size: 80px;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        .thank-you-heading {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .thank-you-message {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">VERTEX<span>.</span></a>
+                <div class="nav-links">
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#team">Team</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="index.html" class="btn">Home</a>
+                </div>
+                <div class="mobile-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="thank-you-container">
+        <div class="thank-you-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1 class="thank-you-heading">Thank You!</h1>
+        <p class="thank-you-message">Your consultation request has been received. We'll review your information and get back to you within 24 hours using your preferred contact method.</p>
+        <a href="index.html" class="btn">Return to Homepage</a>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">VERTEX<span>.</span></a>
+                    <p>Professional tax and financial services for startups and individuals. We make the complex simple.</p>
+                    <div class="footer-contact">
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <p>+91 7433008559</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <p>+91 9630940444</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:Ca.shubhamkedia@gmail.com">Ca.shubhamkedia@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="index.html#services">Tax Filing & Planning</a></li>
+                        <li><a href="index.html#services">Startup Advisory</a></li>
+                        <li><a href="index.html#services">Accounting & Bookkeeping</a></li>
+                        <li><a href="index.html#services">GST & Compliance</a></li>
+                        <li><a href="index.html#services">Business Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 VERTEX Advisory Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
