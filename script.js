@@ -105,16 +105,10 @@ consultationType.addEventListener('change', function() {
 
 // Form validation and submission
 consultationForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Basic form validation
-    const requiredFields = document.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!field.value) {
+    if (!field.value) {
             isValid = false;
             field.style.borderColor = 'red';
+            e.preventDefault(); // Only prevent submission if validation fails
         } else {
             field.style.borderColor = '';
         }
@@ -123,39 +117,19 @@ consultationForm.addEventListener('submit', function(e) {
     if (consultationType.value === 'other' && !document.getElementById('otherTopic').value) {
         document.getElementById('otherTopic').style.borderColor = 'red';
         isValid = false;
+        e.preventDefault();
     }
     
-    // If form is valid, process submission
-    if (isValid) {
-        // Here you would typically send the form data to your server
-        // For this example, we'll just show a success message
-        
-        // Create success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message';
-        successMessage.innerHTML = `
-            <h3>Thank you for your request!</h3>
-            <p>We've received your consultation request and will contact you within 24 hours using your preferred contact method.</p>
-            <button id="closeSuccess" class="submit-btn">Close</button>
-        `;
-        
-        // Replace form with success message
-        consultationForm.innerHTML = '';
-        consultationForm.appendChild(successMessage);
-        
-        // Close modal when success message button is clicked
-        document.getElementById('closeSuccess').addEventListener('click', function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            
-            // Reset form (you might want to do this after modal is closed)
-            setTimeout(() => {
-                consultationForm.innerHTML = ''; // Clear success message
-                location.reload(); // Reload page to reset the form
-                // Alternative to reload: re-inject the original form HTML
-            }, 300);
-        });
+    // If form is not valid, prevent submission
+    if (!isValid) {
+        e.preventDefault();
     }
+    // If form is valid, it will naturally submit to FormSubmit.co
+    
+    
+    
+
+            
 });
 
 // Add this style for success message
