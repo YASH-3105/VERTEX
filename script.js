@@ -103,37 +103,13 @@ consultationType.addEventListener('change', function() {
     }
 });
 
-// Form validation and submission
-consultationForm.addEventListener('submit', function(e) {
-    // Basic form validation
-    const requiredFields = document.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        
-         if (!field.value) {
-            isValid = false;
-            field.style.borderColor = 'red';
-            e.preventDefault(); // Only prevent submission if validation fails
-        } else {
-            field.style.borderColor = '';
-        }
-    });
-    
-    if (consultationType.value === 'other' && !document.getElementById('otherTopic').value) {
-        document.getElementById('otherTopic').style.borderColor = 'red';
-        isValid = false;
-        e.preventDefault();
-    }
-    
-    // If form is not valid, prevent submission
-    // If form is valid, it will naturally submit to FormSubmit.co
+
     
     
     
 
             
-});
+
 
 // Add this style for success message
 const style = document.createElement('style');
