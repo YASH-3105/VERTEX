@@ -127,9 +127,6 @@ consultationForm.addEventListener('submit', function(e) {
     }
     
     // If form is not valid, prevent submission
-    if (!isValid) {
-        e.preventDefault();
-    }
     // If form is valid, it will naturally submit to FormSubmit.co
     
     
